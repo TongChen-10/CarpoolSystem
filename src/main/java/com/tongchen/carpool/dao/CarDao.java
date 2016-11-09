@@ -12,7 +12,7 @@ public interface CarDao {
 
     int updateCarInfo(Car car);
 
-    int getCarSeatNumByRequestId(@Param("userId") long userId);
+    int getCarSeatNumByRequestId(@Param("requestId") long requestId);
 
     Car getMyCar(@Param("userId") long userId);
 }

@@ -23,7 +23,8 @@ public class BillDaoTest {
 
     @Test
     public void insertBillInfo() throws Exception {
-        billDao.insertBillInfo(1001L,1000L);
+        int i=billDao.insertBillInfo(1000L,1002L);
+        System.out.println(i);
     }
 
     @Test

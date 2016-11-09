@@ -5,7 +5,11 @@ package com.tongchen.carpool.enums;
  */
 public enum CarpoolStatEnum {
     SUCCESS(1,"Success"),
-    END(0,"End");
+    END(0,"End"),
+    SEAT_NOT_ENOUGH(-1,"Seat Is Not Enough"),
+    REQUEST_CLOSED(-2,"Request is closed"),
+    DATA_REWRITE(-3,"Data Rewrite"),
+    INNER_ERROR(-4,"System Error");
 
     private int state;
     private  String stateInfo;

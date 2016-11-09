@@ -40,4 +40,10 @@
             request_id = #{requestId}
         </where>
     </update>
+    <update id="renewRequest">
+        UPDATE request SET request_status = 1
+        <where>
+            request_id =(SELECT request_id FROM bill where bill_id=#{billId})
+        </where>
+    </update>
 </mapper>

@@ -34,7 +34,7 @@ public class CarDaoTest {
 
     @Test
     public void getCarSeatNum() throws Exception {
-        int i=carDao.getCarSeatNum(1000L);
+        int i=carDao.getCarSeatNumByRequestId(1002L);
         System.out.println(i);
     }
 

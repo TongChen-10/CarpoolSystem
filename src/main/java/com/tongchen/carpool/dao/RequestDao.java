@@ -21,4 +21,6 @@ public interface RequestDao {
     int fullRequest(@Param("requestId") long requestId);
 
     int cancelRequest(@Param("requestId") long requestId);
+
+    int renewRequest(@Param("billId") long billId);
 }

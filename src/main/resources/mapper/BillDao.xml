@@ -5,7 +5,8 @@
 <mapper namespace="com.tongchen.carpool.dao.BillDao">
     <insert id="insertBillInfo">
         INSERT ignore INTO  bill(user_id,request_id)
-        VALUES (#{userId},#{requestId})
+        SELECT #{userId},#{requestId} FROM dual
+        WHERE NOT EXISTS(SELECT request_id FROM request WHERE request_id = #{requestId} and request_status=2);
     </insert>
     <update id="cancelBill">
         UPDATE bill SET bill_status = 0
@@ -28,7 +29,7 @@
     <select id="checkBillNumFromSameRequest" resultType="int">
         SELECT count(1) FROM bill
         <where>
-            request_id = #{requestId}
+            request_id = #{requestId} and bill_status=1
         </where>
     </select>
 </mapper>
